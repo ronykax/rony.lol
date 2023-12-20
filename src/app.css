@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply text-white bg-blackish;
+  font-family: "Work Sans", sans-serif;
+  line-height: 1.625;
+}
+
+h1 {
+  @apply text-2xl;
+}
+
+h2 {
+  @apply text-white; 
+}
+
+h3 {
+  @apply text-white text-opacity-75;
+}
+
+h4 {
+  @apply text-white text-opacity-50;
+}
+
+p {
+  @apply text-white text-opacity-75;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-white bg-opacity-50;
+}
