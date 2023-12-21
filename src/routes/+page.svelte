@@ -38,7 +38,7 @@
       yearOrWhatever: "𝕏"
     },
     {
-      link: "https://x.com/ronykax",
+      link: "https://discord.com/users/791222882499690519",
       title: "ronykax",
       yearOrWhatever: "Discord"
     },
