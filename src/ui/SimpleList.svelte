@@ -1,6 +1,6 @@
 <script lang="ts">
   export let items: Item[];
-  import Arrow from "./Arrow.svelte";
+  import Link from "./Link.svelte";
 </script>
 
 <ul class="ml-4 space-y-6 sm:ml-0">
@@ -11,12 +11,7 @@
           <h4>{item.yearOrWhatever}</h4>
         </div>
         <div class="flex-[2_1_0%]">
-          <div class="flex items-center gap-1">
-            <h2 class="hover:underline underline-offset-4 decoration-1">
-              <a href="{item.link}">{item.title}</a>
-            </h2>
-            <Arrow />
-          </div>
+          <Link link={item.link} title={item.title} />
           {#if item.description !== undefined}
             <p>{item.description}</p>
           {/if}

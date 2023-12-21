@@ -1,6 +1,11 @@
 <script lang="ts">
+  import { onMount } from "svelte";
+  import { blur } from "svelte/transition";
   import DetailedList from "../ui/DetailedList.svelte";
   import SimpleList from "../ui/SimpleList.svelte";
+
+  let animate = false;
+  onMount(() => animate = true);
 
   let projects: Item[] = [
     {
@@ -45,14 +50,13 @@
   ];
 </script>
 
-<div class="px-6 py-8 md:py-16 sm:px-12">
-  <div class="max-w-lg mx-auto">
-
-    <div class="flex flex-col gap-14">
+{#if animate}  
+  <div class="px-6 py-8 md:py-16 sm:px-12" transition:blur>
+    <div class="flex flex-col max-w-lg mx-auto gap-14">
 
       <div class="space-y-2">
         <h2>Hi, I'm Rony</h2>
-        <p class="ml-4 sm:ml-0">I'm a 15y/o developer building cool stuff since 2018. I also do some UI/UX and write from time to time.</p>
+        <p class="ml-4 sm:ml-0">I'm a 15y/o developer building cool stuff since 2018. I also design and write from time to time.</p>
       </div>
 
       <div class="space-y-6">
@@ -61,7 +65,7 @@
       </div>
 
       <div class="space-y-6">
-        <h2>Experience</h2>
+        <h2>Previous</h2>
         <DetailedList items={experiences} />
       </div>
 
@@ -69,8 +73,7 @@
         <h2>Contact</h2>
         <SimpleList items={socials} />
       </div>
-
+      
     </div>
-    
   </div>
-</div>
+{/if}
