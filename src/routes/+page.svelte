@@ -87,7 +87,7 @@
             <ul class="flex flex-wrap gap-4 mt-6">
                 {#each socials as item}
                     <li>
-                        <a href="{item.url}">
+                        <a href="{item.url}" class="{item.url}">
                             <span class="opacity-75 hover:opacity-100">{@html item.icon}</span>
                         </a>
                     </li>
