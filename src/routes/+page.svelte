@@ -1,15 +1,7 @@
 <script lang="ts">
     import { slide } from "svelte/transition";
     import { useLanyard } from "sk-lanyard";
-
-    // Icons
-    import X from "../../static/X.svg?raw";
-    import Discord from "../../static/Discord.svg?raw";
-    import Github from "../../static/Github.svg?raw";
-    import Youtube from "../../static/Youtube.svg?raw";
-    import Linked from "../../static/Linked.svg?raw";
-    
-    import Link from "$lib/Link.svelte";
+    import { X, Discord, Github, Youtube, Linked, Link } from "$lib";
 
     const socials: {
         url: string;
