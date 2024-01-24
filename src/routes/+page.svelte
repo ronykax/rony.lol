@@ -1,79 +1,115 @@
 <script lang="ts">
-  import { onMount } from "svelte";
-  import { blur } from "svelte/transition";
-  import DetailedList from "../ui/DetailedList.svelte";
-  import SimpleList from "../ui/SimpleList.svelte";
+    import { slide } from "svelte/transition";
+    import { useLanyard } from "sk-lanyard";
+    import { X, Discord, Github, Youtube, Linked, Link } from "$lib";
 
-  let animate = false;
-  onMount(() => animate = true);
+    const socials: {
+        url: string;
+        icon: string;
+    }[] = [
+        {
+            url: "https://x.com/ronykax",
+            icon: X
+        },
+        {
+            url: "https://discord.gg/XbkmqxDvms",
+            icon: Discord
+        },
+        {
+            url: "https://github.com/ronykax",
+            icon: Github
+        },
+        {
+            url: "/",
+            icon: Youtube
+        }
+    ];
 
-  let projects: Item[] = [
-    {
-      link: "https://reps.bio",
-      title: "Reps.bio",
-      description: "Online reputation builder",
-      yearOrWhatever: "Ongoing"
-    },
-    {
-      link: "https://qtext.app",
-      title: "Quick Text",
-      description: "A faster and better alternative to Text Blaze with no paywalls",
-      yearOrWhatever: "2023"
-    }
-  ];
+    const projects: {
+        title: string;
+        description: string;
+        url: string;
+        icon: string;
+    }[] = [
+        {
+            title: "Math Run",
+            description: "Silly game where you speed run through problems math problems",
+            url: "https://github.com/ronykax",
+            icon: "MathRun.png"
+        },
+        {
+            title: "Netcord",
+            description: "Get professional community-building service accross Discord",
+            url: "https://netcord.in",
+            icon: "Netcord.png"
+        },
+        {
+            title: "Reps.bio",
+            description: "Link in bio featuring a global and top-notch reputation system",
+            url: "https://github.com/ronykax",
+            icon: "Folio.png"
+        }
+    ];
 
-  let experiences: Item[] = [
-    {
-      link: "https://netcord.in",
-      title: "Netcord",
-      description: "A creative agency on Discord",
-      yearOrWhatever: 2023
-    }
-  ];
-
-  let socials: Item[] = [
-    {
-      link: "https://x.com/ronykax",
-      title: "ronykax",
-      yearOrWhatever: "𝕏"
-    },
-    {
-      link: "https://discord.com/users/791222882499690519",
-      title: "ronykax",
-      yearOrWhatever: "Discord"
-    },
-    {
-      link: "mailto:ronykax@gmail.com",
-      title: "ronykax@gmail.com",
-      yearOrWhatever: "Email"
-    }
-  ];
+    const presence = useLanyard({ method: "rest", id: "791222882499690519" });
+    let seeMore = false;
 </script>
 
-{#if animate}  
-  <div class="px-6 py-8 md:py-16 sm:px-12" transition:blur>
-    <div class="flex flex-col max-w-lg mx-auto gap-14">
+<div class="max-w-screen-md mx-auto bg-blue.gray px-6 py-6 space-y-12 md:py-20">
 
-      <div class="space-y-2">
-        <h2>Hi, I'm Rony</h2>
-        <p class="ml-4 sm:ml-0">I'm a 15y/o developer building cool stuff since 2018. I also design and write from time to time.</p>
-      </div>
+    <div class="flex flex-col-reverse gap-6 md:flex-row">
+        <div class="flex flex-col gap-2">
+            <h1 class="font-bricolage.grotesque">Hi, I'm Rony Kati</h1>
+            
+            <div>
+                <p>I'm 15-years-old building cool stuff since 2018. I primarily use TypeScript but I'm currently learning 🦀Rust.</p>
+                {#if seeMore}
+                    <p transition:slide={{ duration: 100 }}>
+                        <br>
+                        Besides programming, I also enjoy watching anime. Some of my favorite animes are <Link href="https://google.com/search?q=attack+on+titan">Attact On Titan</Link> and <Link href="https://google.com/search?q=demon+slayer">Demon Slayer</Link>. <Link href="https://google.com/search?q=rocket+league">Rocket League</Link> is my ideal game to play and I have a passion for aviation too!
+                    </p>
+                {/if}
+                <button class="mt-2 font-medium text-white text-opacity-50 underline underline-offset-4 hover:text-opacity-75" on:click={() => seeMore = !seeMore}>{seeMore ? "See less" : "More about me"}</button>
+            </div>
 
-      <div class="space-y-6">
-        <h2>Projects</h2>
-        <DetailedList items={projects} />
-      </div>
-
-      <div class="space-y-6">
-        <h2>Previous</h2>
-        <DetailedList items={experiences} />
-      </div>
-
-      <div class="space-y-6">
-        <h2>Contact</h2>
-        <SimpleList items={socials} />
-      </div>
-      
+            <ul class="flex flex-wrap gap-4 mt-6">
+                {#each socials as item}
+                    <li>
+                        <a href="{item.url}" class="{item.url}">
+                            <span class="opacity-75 hover:opacity-100">{@html item.icon}</span>
+                        </a>
+                    </li>
+                {/each}
+            </ul>
+        </div>
+        
+        <div class="p-1 rounded-full ring-1 ring-white ring-opacity-25 max-w-32 max-h-32">
+            <img class="w-full h-full rounded-full" src="chibee.jpg" alt="">
+        </div>
     </div>
-  </div>
-{/if}
+
+    <ul class="grid grid-cols-1 gap-4 md:grid-cols-2">
+        {#each projects as item}
+            <li>
+                <a href="{item.url}">
+                    <div class="h-full p-4 bg-white rounded-[4px] bg-opacity-5 hover:bg-opacity-7 ring-1 ring-white ring-opacity-15 backdrop-blur-sm">
+                        <div class="space-y-1">
+                            <h2 class="font-bricolage.grotesque relative">
+                                {item.title}
+                                <span class="absolute my-2 ml-1">
+                                    {@html Linked}
+                                </span>
+                            </h2>
+                            <p>{item.description}</p>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        {/each}
+    </ul>
+
+    <div>
+        <h2 class="text-opacity-25">Built with Svelte, Tailwind, & Vercel.</h2>
+        <h2 class="text-opacity-25">© 2024 — All rights reserved</h2>
+    </div>
+</div>
