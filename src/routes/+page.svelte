@@ -1,6 +1,5 @@
 <script lang="ts">
     import { slide } from "svelte/transition";
-    import { useLanyard } from "sk-lanyard";
     import { X, Discord, Github, Youtube, Linked, Link } from "$lib";
 
     const socials: {
@@ -51,7 +50,6 @@
         }
     ];
 
-    const presence = useLanyard({ method: "rest", id: "791222882499690519" });
     let seeMore = false;
 </script>
 

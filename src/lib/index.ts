@@ -1,4 +1,3 @@
-// place files you want to import through the `$lib` alias in this folder.
 import X from "./assets/X.svg?raw";
 import Discord from "./assets/Discord.svg?raw";
 import Github from "./assets/Github.svg?raw";
