@@ -61,23 +61,7 @@
 
     const presence = useLanyard({ method: "rest", id: "791222882499690519" });
     let seeMore = false;
-
-    let meta = {
-        title: "Rony Kati",
-        description: "passionate and sleep deprived developer",
-        themeColor: "#181818",
-        keywords: "rony, kati"
-    }
 </script>
-
-<svelte:head>
-    <title>{meta.title}</title>
-    <meta name="description" content="{meta.description}">
-    <meta name="theme-color" content="{meta.themeColor}">
-    <meta name="keywords" content="{meta.keywords}">
-    <meta property="og:title" content="{meta.title}">
-    <meta property="og:image" content="chibee.jpg">
-</svelte:head>
 
 <div class="max-w-screen-md mx-auto bg-blue.gray px-6 py-6 space-y-12 md:py-20">
 
