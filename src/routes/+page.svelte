@@ -61,11 +61,23 @@
 
     const presence = useLanyard({ method: "rest", id: "791222882499690519" });
     let seeMore = false;
+
+    let meta = {
+        title: "Rony Kati",
+        description: "passionate and sleep deprived developer",
+        themeColor: "#181818",
+        keywords: "rony, kati"
+    }
 </script>
 
-<!-- A group of innovators that offer development services to build websites that are not just good looking but also secure, functional, and most importantly, SEO friendly -->
-
-<!-- {$presence && $presence.discord_status} -->
+<svelte:head>
+    <title>{meta.title}</title>
+    <meta name="description" content="{meta.description}">
+    <meta name="theme-color" content="{meta.themeColor}">
+    <meta name="keywords" content="{meta.keywords}">
+    <meta property="og:title" content="{meta.title}">
+    <meta property="og:image" content="chibee.jpg">
+</svelte:head>
 
 <div class="max-w-screen-md mx-auto bg-blue.gray px-6 py-6 space-y-12 md:py-20">
 
@@ -100,13 +112,6 @@
         </div>
     </div>
 
-    <!-- <div>
-        <div class="flex gap-2">
-            <div class="w-full h-1 bg-white bg-opacity-25 rounded-md"></div>
-            <div class="w-full h-1 bg-white bg-opacity-25 rounded-md"></div>
-        </div>
-    </div> -->
-
     <ul class="grid grid-cols-1 gap-4 md:grid-cols-2">
         {#each projects as item}
             <li>
@@ -131,9 +136,4 @@
         <h2 class="text-opacity-25">Built with Svelte, Tailwind, & Vercel.</h2>
         <h2 class="text-opacity-25">© 2024 — All rights reserved</h2>
     </div>
-
-    <!-- <div class="space-y-2 text-center">
-        <h1 class="font-bricolage.grotesque text-2xl md:text-4xl md:w-3/4 md:mx-auto">"Working with Rony has been an absolute pleasure!"</h1>
-        <h2 class="text-opacity-75">~ <a class="underline underline-offset-4" href="/">Emilia Petersen</a></h2>
-    </div> -->
 </div>
