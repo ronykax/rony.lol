@@ -4,10 +4,22 @@ import Link from "./Link.svelte";
 import X from "./assets/X.svg?raw";
 import Discord from "./assets/Discord.svg?raw";
 import Github from "./assets/Github.svg?raw";
-import Youtube from "./assets/Youtube.svg?raw";
 import Linked from "./assets/Linked.svg?raw";
 
-const config = {
+interface Config {
+    socials: {
+        url: string;
+        icon: string;
+    }[],
+    projects: {
+        title: string;
+        description: string;
+        url: string;
+    }[],
+    discordUid: string;
+}
+
+const config: Config = {
     socials: [
         {
             url: "https://x.com/ronykax",
@@ -20,40 +32,36 @@ const config = {
         {
             url: "https://github.com/ronykax",
             icon: Github
-        },
-        {
-            url: "/",
-            icon: Youtube
         }
-    ] as {
-        url: string;
-        icon: string;
-    }[],
+    ],
     projects: [
-        {
-            title: "Math Run",
-            description: "Silly game where you speed run through problems math problems",
-            url: "https://github.com/ronykax",
-            icon: "MathRun.png"
-        },
         {
             title: "Netcord",
             description: "Get professional community-building service accross Discord",
-            url: "https://netcord.in",
-            icon: "Netcord.png"
+            url: "https://netcord.in"
         },
         {
             title: "Reps.bio",
             description: "Link in bio featuring a global and top-notch reputation system",
-            url: "https://github.com/ronykax",
-            icon: "Folio.png"
+            url: "https://github.com/ronykax"
+        },
+        {
+            title: "Math Run",
+            description: "Beat the clock or race against it and speedrun through math problems",
+            url: "https://github.com/ronykax"
+        },
+        {
+            title: "ChibeeU",
+            description: "Become a chibee-like you! A free and cute avatar editor (soon)",
+            url: "https://chibeeu.com"
+        },
+        {
+            title: "Untitled Web",
+            description: "A group of creatives offering web and app development services",
+            url: "/"
         }
-    ] as {
-        title: string;
-        description: string;
-        url: string;
-        icon: string;
-    }[]
+    ],
+    discordUid: "791222882499690519"
 }
 
-export { X, Discord, Github, Youtube, Linked, Link, config }
+export { Linked, Link, config }
