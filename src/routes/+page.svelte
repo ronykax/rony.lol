@@ -25,7 +25,9 @@
                     </p>
                 {/if}
 
-                <button class="mt-2 font-medium text-white text-opacity-50 underline underline-offset-4 hover:text-opacity-75" on:click={() => seeMore = !seeMore}>{seeMore ? "See less" : "Learn more"}</button>
+                <button class="mt-2.5 font-medium text-white text-opacity-50 underline underline-offset-4 hover:text-opacity-75" on:click={() => seeMore = !seeMore}>
+                    {seeMore ? "See less" : "Learn more"}
+                </button>
             </div>
         </div>
         

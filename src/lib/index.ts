@@ -36,19 +36,20 @@ const config: Config = {
     ],
     projects: [
         {
-            title: "Netcord",
-            description: "Get professional community-building service accross Discord",
-            url: "https://netcord.in"
-        },
-        {
             title: "Reps.bio",
             description: "Link in bio featuring a global and top-notch reputation system",
             url: "https://github.com/ronykax"
         },
         {
             title: "Math Run",
-            description: "Beat the clock or race against it and speedrun through math problems",
+            description: "Fun game where speed run your way through math problems",
+            // description: "Beat the clock or race against it and speedrun through math problems",
             url: "https://github.com/ronykax"
+        },
+        {
+            title: "Netcord",
+            description: "Get professional community-building service accross Discord",
+            url: "https://netcord.in"
         },
         {
             title: "ChibeeU",
