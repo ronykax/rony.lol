@@ -30,7 +30,7 @@
         </div>
         
         <div class="p-1 rounded-full ring-1 ring-white ring-opacity-25 max-w-32 max-h-32">
-            <img class="w-full h-full rounded-full" src="chibee.jpg" alt="">
+            <img class="w-full h-full rounded-full" src="chibee.webp" alt="">
         </div>
     </div>
 
