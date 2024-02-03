@@ -10,6 +10,7 @@ interface Config {
     socials: {
         url: string;
         icon: string;
+        name: string;
     }[],
     projects: {
         title: string;
@@ -23,15 +24,18 @@ const config: Config = {
     socials: [
         {
             url: "https://x.com/ronykax",
-            icon: X
+            icon: X,
+            name: "Twitter / X"
         },
         {
             url: "https://discord.gg/XbkmqxDvms",
-            icon: Discord
+            icon: Discord,
+            name: "Discord"
         },
         {
             url: "https://github.com/ronykax",
-            icon: Github
+            icon: Github,
+            name: "Github"
         }
     ],
     projects: [

@@ -81,7 +81,7 @@
         <ul class="flex flex-wrap gap-3">
             {#each config.socials as item}
                 <li>
-                    <a class="{item.url}" href="{item.url}" target="_blank">
+                    <a href="{item.url}" target="_blank" aria-label="{item.name}">
                         <span class="opacity-25 hover:opacity-75">
                             {@html item.icon}
                         </span>
