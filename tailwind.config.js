@@ -2,19 +2,11 @@
 export default {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
-    extend: {
-      opacity: {
-        "7": "0.07"
-      },
+      extend: {},
       fontFamily: {
-        "bricolage.grotesque": ["Bricolage Grotesque"],
-        "work.sans": ["Work Sans"]
+          "main": ["Be Vietnam Pro", "sans-serif"]
       }
-    },
-    colors: {
-      "dark.gray": "#181818",
-      "white": "#ffffff",
-    }
   },
   plugins: [],
 }
+
