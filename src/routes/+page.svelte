@@ -64,7 +64,7 @@
         <h1 class="text-lg font-semibold opacity-30">About</h1>
 
         <p class="text-lg leading-relaxed">
-            Hi there! I'm Rony and I'm 16y/o. I enjoy coding and working on cool projects.
+            Hi! I'm Rony and I'm 16y/o. I enjoy programming and working on cool projects.
             Besides that, I'm super into aviation and a big fan of Attack On Titan.
         </p>
     </div>
