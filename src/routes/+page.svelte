@@ -101,7 +101,7 @@
 
     <div class="flex justify-between w-full">
         <span class="text-sm font-semibold opacity-30">@ronykax</span>
-        <span class="text-sm font-semibold opacity-30">2024</span>
+        <span class="text-sm font-semibold opacity-30">2008-2024</span>
     </div>
 
 </div>
