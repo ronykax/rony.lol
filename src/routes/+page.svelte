@@ -9,7 +9,7 @@
         {
             label: "Svelte + Kit",
             url: "https://svelte.dev/",
-            content: "Preffered web framework"
+            content: "Preferred web framework"
         },
         {
             label: "PocketBase",
